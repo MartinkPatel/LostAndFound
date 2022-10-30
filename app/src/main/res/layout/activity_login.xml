@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/Titlepage"
+        android:id="@+id/titlepage"
         style="@style/TextAppearance.MaterialComponents.Headline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,10 +18,10 @@
 
     <ImageView
 
-        android:id="@+id/Iitp_logo"
+        android:id="@+id/iitp_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Titlepage"
+        android:layout_below="@id/titlepage"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp"
         android:adjustViewBounds="true"
@@ -29,14 +29,14 @@
         android:maxHeight="250dp"
 
 
-        android:src="@drawable/Iitp_logo" />
+       android:src="@drawable/iitp_logo" />
 
     <TextView
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/Iitp_logo"
+        android:layout_below="@id/iitp_logo"
         android:id="@+id/login_text"
         android:layout_marginTop="25dp"
         android:text="Login in your account" />
