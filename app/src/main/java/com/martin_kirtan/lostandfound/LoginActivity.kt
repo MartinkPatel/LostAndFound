@@ -18,7 +18,7 @@ import com.martin_kirtan.lostandfound.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
 
-    private lateinit var actionBar: ActionBar
+    private lateinit var actionBar: androidx.appcompat.app.ActionBar
 
     private lateinit var progressDialog:ProgressDialog
 
@@ -93,6 +93,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUsr() {
     val firebaseUser=firebaseAuth.currentUser
+
         if(firebaseUser!=null){
             startActivity(Intent(this, HomePage::class.java))
             finish()

@@ -99,10 +99,17 @@
             android:id="@+id/reg_ph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="text"
             android:hint="WA Phone Number"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
+    <Button
+        android:id="@+id/reg_signupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/reg_ph_til"
+        />
 
 </RelativeLayout>
