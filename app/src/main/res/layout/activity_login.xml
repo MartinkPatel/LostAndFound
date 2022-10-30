@@ -17,6 +17,7 @@
         android:textStyle="bold" />
 
     <ImageView
+
         android:id="@+id/Iitp_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,13 +37,65 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/Iitp_logo"
-        android:layout_marginTop="57dp"
+        android:id="@+id/login_text"
+        android:layout_marginTop="25dp"
         android:text="Login in your account" />
 
 
 <!--    email-->
-
-
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/login_text"
+    android:layout_marginTop="10dp"
+    android:id="@+id/emailtil">
+    <EditText
+        android:id="@+id/emailet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        />
+</com.google.android.material.textfield.TextInputLayout>
 <!--    password-->
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/emailtil"
+    android:layout_marginTop="10dp"
+    android:id="@+id/passwortil"
+    app:passwordToggleEnabled="true"
+    >
+    <EditText
+        android:id="@+id/passwordet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"/>
 
+</com.google.android.material.textfield.TextInputLayout>
+<Button
+    android:id="@+id/loginbtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Login"
+    android:layout_marginTop="10dp"
+    android:layout_below="@id/passwortil"
+    />
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/loginbtn"
+        />
+    <Button
+        android:id="@+id/forgotpwsbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/signupbtn"
+        />
 </RelativeLayout>
