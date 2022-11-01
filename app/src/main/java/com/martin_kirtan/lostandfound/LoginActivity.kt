@@ -53,6 +53,10 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+        binding.forgotpwsbtn.setOnClickListener {
+            startActivity(Intent(this,ForgotPassword::class.java))
+        }
+
     }
 
     private fun validateData() {
@@ -93,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUsr() {
     val firebaseUser=firebaseAuth.currentUser
-
+        
         if(firebaseUser!=null){
             startActivity(Intent(this, HomePage::class.java))
             finish()
