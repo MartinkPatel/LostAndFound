@@ -100,6 +100,16 @@ class SignupActivity : AppCompatActivity() {
                     val firebaseUser=firebaseAuth.currentUser
                     val email=firebaseUser!!.email
                     Toast.makeText(this,"Account Created with email: $email",Toast.LENGTH_SHORT).show()
+                    firebaseUser.sendEmailVerification()
+                        .addOnSuccessListener{
+                            Toast.makeText(this, "Verification email has been sent.!", Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener{e->
+                            Toast.makeText(this, "Verification email not sent due to ${e.message}", Toast.LENGTH_SHORT).show()
+
+                        }
+
+
+
 
                     startActivity(Intent(this,HomePage::class.java))
                     finish()

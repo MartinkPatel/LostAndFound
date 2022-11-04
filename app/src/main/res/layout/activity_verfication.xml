@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".verfication">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email not Verified! "
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/verificationTv"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        />
+
+    <TextView
+        android:id="@+id/verication_text"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/verificationTv"
+        android:layout_marginTop="200dp"
+        android:textStyle="bold"
+        android:text="Email verification link has been sent to your email id.After verification , please login again." />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verication_text"
+        android:layout_marginTop="20dp"
+        android:id="@+id/verify_lgnbtn"
+        android:text="Login"/>
+</RelativeLayout>
