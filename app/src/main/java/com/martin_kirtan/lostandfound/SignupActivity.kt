@@ -111,7 +111,7 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-                    startActivity(Intent(this,HomePage::class.java))
+                    startActivity(Intent(this,verfication::class.java))
                     finish()
                 }
                 .addOnFailureListener {e->

@@ -25,7 +25,7 @@
         android:layout_below="@id/verificationTv"
         android:layout_marginTop="200dp"
         android:textStyle="bold"
-        android:text="Email verification link has been sent to your email id.After verification , please login again." />
+        android:text="Email verification link has been sent to your email id.After verification , please login again.After clicking on link click the login button below." />
 
     <Button
         android:layout_width="match_parent"

@@ -82,9 +82,14 @@ class LoginActivity : AppCompatActivity() {
                 progressDialog.dismiss()
                 val firebaseUser=firebaseAuth.currentUser
                 val email=firebaseUser!!.email
+                if(firebaseUser!!.isEmailVerified){
                 Toast.makeText(this,"Logged in as ${email}",Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this,HomePage::class.java))
-                finish()
+                finish()}
+                else{
+                    startActivity(Intent(this,verfication::class.java))
+                    finish()
+                }
 
             }
             .addOnFailureListener{ e->
@@ -97,7 +102,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUsr() {
     val firebaseUser=firebaseAuth.currentUser
-        
+
         if(firebaseUser!=null){
             startActivity(Intent(this, HomePage::class.java))
             finish()
