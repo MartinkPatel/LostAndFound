@@ -12,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.martin_kirtan.lostandfound.databinding.ActivityLoginBinding
 import com.martin_kirtan.lostandfound.databinding.ActivitySignupBinding
+import com.martin_kirtan.lostandfound.firestore.FirestoreClass
+import com.martin_kirtan.lostandfound.models.User
 
 class SignupActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class SignupActivity : AppCompatActivity() {
         private lateinit var firebaseAuth: FirebaseAuth
         private var name=""
         private var roll=""
-        private var email=""
+        private var email:String=""
         private var password=""
         private var cnf_password=""
         private var phone=""
@@ -96,9 +98,21 @@ class SignupActivity : AppCompatActivity() {
             progressDialog.show()
             firebaseAuth.createUserWithEmailAndPassword(email,password)
                 .addOnSuccessListener {
-                    progressDialog.dismiss()
+
+
+
                     val firebaseUser=firebaseAuth.currentUser
                     val email=firebaseUser!!.email
+                    val user=User(
+                        firebaseUser.uid,
+                        name,
+                        roll,
+                        firebaseUser.email!!,
+                        phone,
+
+                    )
+                    FirestoreClass().registerUser(this,user)
+                    progressDialog.dismiss()
                     Toast.makeText(this,"Account Created with email: $email",Toast.LENGTH_SHORT).show()
                     firebaseUser.sendEmailVerification()
                         .addOnSuccessListener{

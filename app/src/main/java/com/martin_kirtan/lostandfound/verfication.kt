@@ -42,12 +42,8 @@ class verfication : AppCompatActivity() {
         }
 
         bindding.verifyLgnbtn.setOnClickListener {
-            if(firebaseUser!!.isEmailVerified){
-            startActivity(Intent(this,LoginActivity::class.java))
-            finish()}
-            else{
-                Toast.makeText(this, "Email not verified", Toast.LENGTH_SHORT).show()
-            }
+           startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
 
     }
