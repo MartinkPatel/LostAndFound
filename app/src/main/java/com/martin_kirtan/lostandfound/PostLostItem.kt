@@ -24,7 +24,7 @@ import java.util.*
 
 class PostLostItem : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPostLostItemBinding
+    private lateinit var binding: ActivityPostLostItem2Binding
     private lateinit var database: DatabaseReference
     private lateinit var storage: FirebaseStorage
     private lateinit var firebaseAuth: FirebaseAuth
@@ -50,7 +50,7 @@ class PostLostItem : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityPostLostItemBinding.inflate(layoutInflater)
+        binding= ActivityPostLostItem2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth= FirebaseAuth.getInstance()

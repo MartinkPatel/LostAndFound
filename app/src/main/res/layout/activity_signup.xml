@@ -108,8 +108,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
+
         android:layout_marginTop="10dp"
+        android:layout_below="@id/img"
+        />
+    <Button
+        android:id="@+id/reg_upload"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="50dp"
         android:layout_below="@id/reg_ph_til"
         />
-
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/reg_ph_til"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/profile_pic"/>
 </RelativeLayout>

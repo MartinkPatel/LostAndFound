@@ -45,4 +45,10 @@
         android:layout_height="wrap_content"
         android:text="User Profile"
         />
+    <Button
+        android:id="@+id/feedLostItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feed Lost Items"
+        />
 </LinearLayout>

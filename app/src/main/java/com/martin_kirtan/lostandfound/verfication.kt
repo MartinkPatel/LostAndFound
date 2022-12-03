@@ -42,6 +42,7 @@ class verfication : AppCompatActivity() {
         }
 
         bindding.verifyLgnbtn.setOnClickListener {
+            firebaseAuth.signOut()
            startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }

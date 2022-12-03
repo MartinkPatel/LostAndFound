@@ -47,6 +47,9 @@ class HomePage : AppCompatActivity() {
             startActivity(Intent(this,UserProfile::class.java))
 
         }
+        binding.feedLostItems.setOnClickListener {
+            startActivity(Intent(this,FeedLostItems::class.java))
+        }
         userID =FirestoreClass().getCurrentUserId()
         database = FirebaseDatabase.getInstance().getReference(Constants.USERS)
         database.child(userID).get().addOnSuccessListener {

@@ -50,7 +50,7 @@ class UserProfile : AppCompatActivity() {
                  name="${user.name}"
                  roll ="${user.roll}"
                  email="${user.email}"
-                 img="${user.uri}"
+                 img="${user.url}"
                 phone="${user.phone}"
                 binding.userProfileName.text=name.toString().toEditable()
                 binding.userNumber.text=phone.toString().toEditable()
