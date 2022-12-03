@@ -28,9 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="Lost By"
             android:inputType="text"
-            android:editable="false"
-            android:focusable="false"
-            android:clickable="false"/>
+           />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -57,11 +55,7 @@
             android:layout_height="wrap_content"
             android:hint="Phone Number"
             android:inputType="text"
-            android:editable="false"
-
-            android:focusable="false"
-
-            android:clickable="false"/>
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,11 +83,7 @@
             android:layout_height="wrap_content"
             android:hint="Lost At"
             android:inputType="text"
-            android:editable="false"
-
-            android:focusable="false"
-
-            android:clickable="false"/>
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -119,12 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Message"
-            android:inputType="text"
-            android:editable="false"
-
-            android:focusable="false"
-
-            android:clickable="false"/>
+           />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    <TextView-->

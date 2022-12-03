@@ -39,40 +39,43 @@ class AdapterLostItems (private val context: android.content.Context, private va
     // binds the list items to a view
     override fun onBindViewHolder(holder: AdapterLostItems.MyViewHolder, position: Int) {
 
-        val item: LostItems = lostItemsList[position]
-        holder.fullName.text= item.name
-        holder.phoneNumber.text = item.phone
-        holder.locationLost.text = item.location
-        holder.message.text= item.message
+            val item: LostItems = lostItemsList[position]
+            holder.fullName.text= item.name
+            holder.phoneNumber.text = item.phone
+            holder.locationLost.text = item.location
+            holder.message.text= item.message
 
-        val userID = lostItemsList[position].userID
+            val userID = lostItemsList[position].userID
 
-        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService::class.java)
+            apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService::class.java)
 
-        holder.lostBt.setOnClickListener {
-            FirebaseDatabase.getInstance().reference.child("Tokens").child(userID!!).child("token")
-                .addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        val usertoken: String = snapshot.getValue(String::class.java).toString()
-                        sendNotification(
-                            usertoken,
-                            "Lost and Found App",
-                            "Someone found your lost item!"
-                        )
-                    }
+            holder.lostBt.setOnClickListener {
+                FirebaseDatabase.getInstance().reference.child("Tokens").child(userID!!).child("token")
+                    .addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            val usertoken: String = snapshot.getValue(String::class.java).toString()
+                            sendNotification(
+                                usertoken,
+                                "Lost and Found App",
+                                "Someone found your lost item!"
+                            )
+                        }
 
-                    override fun onCancelled(error: DatabaseError) {
-                    }
-                })
-        }
-        updateToken()
+                        override fun onCancelled(error: DatabaseError) {
+                        }
+                    })
+            }
+            updateToken()
+        val url1="https://cdn.pixabay.com/photo/2016/09/09/22/40/bike-1658214__340.jpg"
 
+        val url2="https://cdn.pixabay.com/photo/2016/03/31/23/06/bicycle-1297395__340.png"
+        val url3="https://media.istockphoto.com/id/1340571998/photo/man-rides-a-bike-outdoors-in-the-park-on-a-sunny-day-at-sunset.jpg?b=1&s=170667a&w=0&k=20&c=2kpssLbHrNJEQVZ8lVWxuw5MEYDk9afMLv1lY1OEL3Q="
 
-        Glide.with(context).load(item.image1Url).into(holder.image1)
-        Glide.with(context).load(item.image2Url).into(holder.image2)
-        Glide.with(context).load(item.image3Url).into(holder.image3)
-        Glide.with(context).load(item.image4Url).into(holder.image4)
-        Glide.with(context).load(item.image5Url).into(holder.image5)
+            Glide.with(context).load(url1).into(holder.image1)
+            Glide.with(context).load(url2).into(holder.image2)
+            Glide.with(context).load(url3).into(holder.image3)
+            Glide.with(context).load(item.image4Url).into(holder.image4)
+            Glide.with(context).load(item.image5Url).into(holder.image5)
 
     }
 

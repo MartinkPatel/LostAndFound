@@ -25,8 +25,7 @@ class ForgotPassword : AppCompatActivity() {
         binding= ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        actionBar = supportActionBar!!
-        actionBar.title="Forgot Password "
+
 
         progressDialog= ProgressDialog(this)
         progressDialog.setTitle("Please Wait")

@@ -18,7 +18,7 @@ import com.martin_kirtan.lostandfound.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
 
-    private lateinit var actionBar: androidx.appcompat.app.ActionBar
+
 
     private lateinit var progressDialog:ProgressDialog
 
@@ -32,8 +32,7 @@ class LoginActivity : AppCompatActivity() {
         binding=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        actionBar = supportActionBar!!
-        actionBar.title="Login "
+
 
         progressDialog= ProgressDialog(this)
         progressDialog.setTitle("Please Wait")

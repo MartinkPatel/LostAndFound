@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.martin_kirtan.lostandfound.R
@@ -40,16 +41,22 @@ class MyLostItemsAdapter (
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val lostThing = myLostThingsList[position]
         holder.Name.text = myLostThingsList[position].name
+
         holder.Number.text = myLostThingsList[position].phone
         holder.Message.text = myLostThingsList[position].message
         holder.Where.text = myLostThingsList[position].location
 
+        val url1="https://cdn.pixabay.com/photo/2016/09/09/22/40/bike-1658214__340.jpg"
+
+        val url2="https://cdn.pixabay.com/photo/2016/03/31/23/06/bicycle-1297395__340.png"
+        val url3="https://media.istockphoto.com/id/1340571998/photo/man-rides-a-bike-outdoors-in-the-park-on-a-sunny-day-at-sunset.jpg?b=1&s=170667a&w=0&k=20&c=2kpssLbHrNJEQVZ8lVWxuw5MEYDk9afMLv1lY1OEL3Q="
+
         Glide.with(context)
-            .load(lostThing.image1Url).into(holder.Image1)
+            .load(url1).into(holder.Image1)
         Glide.with(context)
-            .load(lostThing.image2Url).into(holder.Image2)
+            .load(url2).into(holder.Image2)
         Glide.with(context)
-            .load(lostThing.image3Url).into(holder.Image3)
+            .load(url3).into(holder.Image3)
         Glide.with(context)
             .load(lostThing.image4Url).into(holder.Image4)
         Glide.with(context)

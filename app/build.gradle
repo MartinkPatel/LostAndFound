@@ -29,6 +29,7 @@ android {
         }
     }
     compileOptions {
+
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -39,9 +40,13 @@ android {
 }
 
 dependencies {
-
+    implementation "com.squareup.picasso:picasso:2.4.0"
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-functions:20.2.1'
+    implementation 'com.google.firebase:firebase-functions-ktx:20.2.1'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

@@ -16,6 +16,7 @@ import com.martin_kirtan.lostandfound.databinding.ActivityPostLostItemBinding
 import com.martin_kirtan.lostandfound.databinding.ActivityUserProfileBinding
 import com.martin_kirtan.lostandfound.firestore.FirestoreClass
 import com.martin_kirtan.lostandfound.models.User
+import com.squareup.picasso.Picasso
 
 class UserProfile : AppCompatActivity() {
     private lateinit var binding: ActivityUserProfileBinding
@@ -33,6 +34,11 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityUserProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        profile_name = findViewById(R.id.user_profile_name)
+        profile_rollno = findViewById(R.id.user_rollno)
+        profile_number = findViewById(R.id.user_number)
+        profile_email = findViewById(R.id.user_email)
+        profile_img = findViewById(R.id.profile_img_profile)
 
         val mFirestore= FirebaseFirestore.getInstance()
         firebaseAuth= FirebaseAuth.getInstance()
@@ -56,12 +62,10 @@ class UserProfile : AppCompatActivity() {
                 binding.userProfileName.text=name.toString().toEditable()
                 binding.userNumber.text=phone.toString().toEditable()
                 binding.userEmail.text=email.toString().toEditable()
-                if (img != null.toString()){
-                  //  Glide.with(this)
-                        //.load(img).into(profile_img)
-                }
+                binding.userRollno.text=roll.toString().toEditable()
 
-
+                val image_url="https://c8.alamy.com/comp/2JK4TGD/homer-simpson-the-simpsons-movie-2007-2JK4TGD.jpg"
+                Glide.with(this).load(image_url).into(profile_img)
             }
         binding.btnLogout.setOnClickListener {
             var userID=userId
@@ -79,7 +83,7 @@ class UserProfile : AppCompatActivity() {
             startActivity(Intent(this,UserLostItems::class.java))
         }
         binding.btnUpdatePass.setOnClickListener{
-            startActivity(Intent(this,UpdatePassword::class.java))
+            startActivity(Intent(this,ForgotPassword::class.java))
         }
 
         binding.textView4.setOnClickListener {

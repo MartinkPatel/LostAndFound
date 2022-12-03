@@ -146,7 +146,8 @@ class PostFoundItem : AppCompatActivity() {
                 "image2url" to foundImage2Url,
                 "image3url" to foundImage3Url,
                 "image4url" to foundImage4Url,
-                "image5url" to foundImage5Url
+                "image5url" to foundImage5Url,
+                "userId" to userID
 
              )
             mFirestore.collection(Constants.USERS).document(userID).collection("Found Items").document(filename)

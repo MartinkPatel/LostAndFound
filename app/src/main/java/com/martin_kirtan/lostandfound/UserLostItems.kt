@@ -44,7 +44,7 @@ class UserLostItems : AppCompatActivity() {
         db.collection(Constants.USERS).document(userID).collection("Lost Items").get().addOnSuccessListener {
             if (!it.isEmpty) {
                 for (data in it.documents) {
-                    db.collection("user").document()
+                    db.collection(Constants.USERS).document()
                     val thing: LostItems? = data.toObject(LostItems::class.java)
                     if (thing != null) {
                         thingsList.add(thing)

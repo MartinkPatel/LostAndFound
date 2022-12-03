@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,34 +27,42 @@
         android:layout_height="wrap_content"
         android:text="Logout"
         />
+
     <Button
         android:id="@+id/postfoundbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="363dp"
         android:layout_height="wrap_content"
-        android:text="Post Found Item"
-        />
+        android:layout_marginTop="40dp"
+        android:text="Post Found Item" />
+
     <Button
         android:id="@+id/postlostbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="364dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:text="Post Found Item"
-        />
+        android:text="Post Lost Item" />
+
     <Button
         android:id="@+id/userProfile"
-        android:layout_width="wrap_content"
+        android:layout_width="364dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:text="User Profile"
-        />
+        android:text="User Profile" />
+
     <Button
         android:id="@+id/feedLostItems"
-        android:layout_width="wrap_content"
+        android:layout_width="367dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:text="Feed Lost Items"
-        />
+        android:layout_above="@+id/feedFoundItems"
+        android:layout_marginBottom="0dp"
+        android:text="Feed Lost Items" />
+
     <Button
         android:id="@+id/feedFoundItems"
-        android:layout_width="wrap_content"
+        android:layout_width="389dp"
         android:layout_height="wrap_content"
-        android:text="Feed Found Items"
-        />
-</LinearLayout>
+        android:layout_marginTop="40dp"
+        android:text="Feed Found Items" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
