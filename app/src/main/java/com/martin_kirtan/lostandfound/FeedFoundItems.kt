@@ -6,33 +6,30 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.*
-import com.martin_kirtan.lostandfound.databinding.ActivityFeedLostItemsBinding
-import com.martin_kirtan.lostandfound.firestore.AdapterLostItems
-import com.martin_kirtan.lostandfound.models.LostItems
+import com.martin_kirtan.lostandfound.databinding.ActivityFeedFoundItemsBinding
+import com.martin_kirtan.lostandfound.firestore.MyAdapterFoundItems
+import com.martin_kirtan.lostandfound.models.FoundItems
 
-class FeedLostItems : AppCompatActivity() {
-    private lateinit var binding: ActivityFeedLostItemsBinding
-    private lateinit var userArrayList: ArrayList<LostItems>
+class FeedFoundItems : AppCompatActivity() {
+    private lateinit var binding: ActivityFeedFoundItemsBinding
+    private lateinit var userArrayList: ArrayList<FoundItems>
     private lateinit var recyclerView: RecyclerView
-    private lateinit var myAdapterLostItems: AdapterLostItems
+    private lateinit var myAdapterFoundItems: MyAdapterFoundItems
     private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityFeedLostItemsBinding.inflate(layoutInflater)
+        binding=ActivityFeedFoundItemsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-    val mFirestore=FirebaseFirestore.getInstance()
-
-        recyclerView = findViewById(R.id.recyclerview_LostFeed)
+        recyclerView = findViewById(R.id.recyclerview_FoundFeed)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
-        userArrayList= arrayListOf()
+        userArrayList = arrayListOf()
 
-        myAdapterLostItems=AdapterLostItems(this,userArrayList)
+        myAdapterFoundItems = MyAdapterFoundItems(this, userArrayList)
 
-        recyclerView.adapter=myAdapterLostItems
+        recyclerView.adapter = myAdapterFoundItems
 
         eventChangeListener()
 
@@ -41,12 +38,12 @@ class FeedLostItems : AppCompatActivity() {
         }
 
 
-
     }
+
     private fun eventChangeListener(){
 
         db = FirebaseFirestore.getInstance()
-        db.collection("Lost Items").addSnapshotListener(object: EventListener<QuerySnapshot> {
+        db.collection("Found Items").addSnapshotListener(object: EventListener<QuerySnapshot> {
             override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                 if(error!= null){
                     Log.e("Firestore Error", error.message.toString())
@@ -55,13 +52,15 @@ class FeedLostItems : AppCompatActivity() {
                 for(dc: DocumentChange in value?.documentChanges!!){
 
                     if(dc.type == DocumentChange.Type.ADDED){
-                        userArrayList.add(dc.document.toObject(LostItems::class.java))
+                        userArrayList.add(dc.document.toObject(FoundItems::class.java))
                     }
                 }
-                myAdapterLostItems.notifyDataSetChanged()
+                myAdapterFoundItems.notifyDataSetChanged()
             }
 
         })
+
+
 
     }
 }

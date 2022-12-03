@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserFoundItems">
+
+    tools:context=".FeedLostItems">
 
     <TextView
         android:id="@+id/textView4"
@@ -26,7 +27,7 @@
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:text="My Found Items"
+        android:text="Found Items"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold|italic"
@@ -35,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_my_found_items"
+        android:id="@+id/recyclerview_FoundFeed"
         android:layout_width="410dp"
         android:layout_height="606dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -45,4 +46,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.503" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

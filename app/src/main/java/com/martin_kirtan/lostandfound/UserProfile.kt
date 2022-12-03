@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.martin_kirtan.lostandfound.databinding.ActivityPostLostItemBinding
@@ -56,14 +57,17 @@ class UserProfile : AppCompatActivity() {
                 binding.userNumber.text=phone.toString().toEditable()
                 binding.userEmail.text=email.toString().toEditable()
                 if (img != null.toString()){
-                    Glide.with(this)
-                        .load(img).into(profile_img)
+                  //  Glide.with(this)
+                        //.load(img).into(profile_img)
                 }
 
 
             }
         binding.btnLogout.setOnClickListener {
+            var userID=userId
             firebaseAuth.signOut()
+            clearToken(userID)
+            
             startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
@@ -83,5 +87,12 @@ class UserProfile : AppCompatActivity() {
         }
 
     }
+
+    private fun clearToken(userID: String) {
+
+        FirebaseDatabase.getInstance().getReference("tokens").child(userID)
+            .removeValue()
+    }
+
     private fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 }

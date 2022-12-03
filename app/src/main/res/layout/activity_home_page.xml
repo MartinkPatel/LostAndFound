@@ -51,4 +51,10 @@
         android:layout_height="wrap_content"
         android:text="Feed Lost Items"
         />
+    <Button
+        android:id="@+id/feedFoundItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feed Found Items"
+        />
 </LinearLayout>

@@ -25,12 +25,11 @@ class HomePage : AppCompatActivity() {
         //actionBar.title="Home Page"
 
         firebaseAuth= FirebaseAuth.getInstance()
-        FirestoreClass().getUserDetails(this)
-        val sharedPreferences=getSharedPreferences(Constants.PREFERENCES, MODE_PRIVATE)
-        val username=sharedPreferences.getString(Constants.LOG_IN_USERNAME,"")!!
-        binding.nameTv.text=username
-        checkUsr()
 
+
+
+        checkUsr()
+        binding.nameTv.text=firebaseAuth.currentUser!!.email
         binding.logoutBtn.setOnClickListener {
             firebaseAuth.signOut()
             checkUsr()
@@ -50,6 +49,9 @@ class HomePage : AppCompatActivity() {
         binding.feedLostItems.setOnClickListener {
             startActivity(Intent(this,FeedLostItems::class.java))
         }
+        binding.feedFoundItems.setOnClickListener {
+            startActivity(Intent(this,FeedFoundItems::class.java))
+        }
         userID =FirestoreClass().getCurrentUserId()
         database = FirebaseDatabase.getInstance().getReference(Constants.USERS)
         database.child(userID).get().addOnSuccessListener {
@@ -64,7 +66,7 @@ class HomePage : AppCompatActivity() {
     private fun checkUsr() {
         val firebaseUser=firebaseAuth.currentUser
         if(firebaseUser!=null){
-            val email=firebaseUser.email
+            val name=firebaseUser.email
            // binding.nameTv.text=username
 
 
