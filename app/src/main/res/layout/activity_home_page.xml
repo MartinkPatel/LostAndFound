@@ -27,4 +27,22 @@
         android:layout_height="wrap_content"
         android:text="Logout"
         />
+    <Button
+        android:id="@+id/postfoundbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Found Item"
+        />
+    <Button
+        android:id="@+id/postlostbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Found Item"
+        />
+    <Button
+        android:id="@+id/userProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Profile"
+        />
 </LinearLayout>

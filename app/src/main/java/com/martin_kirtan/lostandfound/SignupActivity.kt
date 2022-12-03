@@ -104,11 +104,12 @@ class SignupActivity : AppCompatActivity() {
                     val firebaseUser=firebaseAuth.currentUser
                     val email=firebaseUser!!.email
                     val user=User(
-                        firebaseUser.uid,
+                        firebaseUser!!.uid,
                         name,
                         roll,
-                        firebaseUser.email!!,
+                        email.toString(),
                         phone,
+                        " "
 
                     )
                     FirestoreClass().registerUser(this,user)

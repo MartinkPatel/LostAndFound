@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClaimLostitem">
+
+    <TextView
+        android:id="@+id/titleHold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:text="TextView" />
+
+    <!--    image of object-->
+    <ImageView
+        android:id="@+id/imageHold"
+        android:layout_below="@+id/titleHold"
+        android:scaleType="fitXY"
+        android:layout_width="215dip"
+        android:layout_height="200dip"
+        android:layout_centerHorizontal="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <!--    label for date & time posted-->
+
+    <TextView
+        android:id="@+id/dtpLabel"
+        android:layout_below="@+id/imageHold"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="Date &amp; Time Posted" />
+    <!--    date & time found-->
+    <TextView
+        android:id="@+id/dtpHold"
+        android:layout_below="@+id/dtpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <!--    label for location-->
+
+    <TextView
+        android:id="@+id/locLabel"
+        android:layout_below="@+id/dtpHold"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="Location" />
+    <!--    location of object-->
+    <TextView
+        android:id="@+id/locationHold"
+        android:layout_below="@+id/locLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <!--    label for date & time-->
+
+    <TextView
+        android:id="@+id/dtLabel"
+        android:layout_below="@+id/locationHold"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="Date &amp; Time Found" />
+    <!--    date & time found-->
+    <TextView
+        android:id="@+id/dtHold"
+        android:layout_below="@+id/dtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <!--    label for Description-->
+
+    <TextView
+        android:id="@+id/descLabel"
+        android:layout_below="@+id/dtHold"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="Description" />
+
+    <!--    description-->
+    <TextView
+        android:id="@+id/descHold"
+        android:layout_below="@+id/descLabel"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <!--    label for Status-->
+
+    <TextView
+        android:id="@+id/statusLabel"
+        android:layout_below="@+id/descHold"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:text="Claimed" />
+
+    <!--    status -->
+    <TextView
+        android:id="@+id/statusHold"
+        android:layout_below="@+id/statusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/claim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/statusHold"
+        android:layout_centerHorizontal="true"
+        android:text="Claim" />
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/statusHold"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:text="ITEM CLAIMED" />
+
+</RelativeLayout>
